@@ -30,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -49,15 +49,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("gpr"){
-                run {
-                    groupId = "com.github.aditya-augurs"
-                    artifactId = "CountryCodePicker"
-                    version = "1.0.0"
-                }
+publishing {
+    publications {
+        register<MavenPublication>("release"){
+            groupId = "com.github.aditya-augurs"
+            artifactId = "CountryCodePicker"
+            version = "1.0.2"
+
+            afterEvaluate{
+                from(components["release"])
             }
         }
     }

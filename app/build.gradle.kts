@@ -1,3 +1,5 @@
+import io.grpc.internal.SharedResourceHolder.release
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
@@ -45,4 +47,18 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("gpr"){
+                run {
+                    groupId = "com.github.aditya-augurs"
+                    artifactId = "CountryCodePicker"
+                    version = "1.0.0"
+                }
+            }
+        }
+    }
 }

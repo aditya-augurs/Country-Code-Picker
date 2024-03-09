@@ -6,7 +6,7 @@ Add this to your gradle file and sync.
   ````groovy
           repositories {
             mavenCentral()
-	    maven { url 'https://jitpack.io' }
+            maven { url 'https://jitpack.io' }
           }
    ````
 

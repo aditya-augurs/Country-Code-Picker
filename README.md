@@ -1,4 +1,4 @@
-Country Code Picker Library ![Jitpack](https://jitpack.io/v/aditya-augurs/Country-Code-Picker.svg)
+Country Code Picker Library [![](https://jitpack.io/v/aditya-augurs/Country-Code-Picker.svg)](https://jitpack.io/#aditya-augurs/Country-Code-Picker)
 ==================================
 
 Add this to your gradle file and sync.
